@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Nandini Kesarwani — CS Engineer & AI Enthusiast. B.Tech CSE at UCER Prayagraj. Specialising in Machine Learning, NLP, and Ensemble Learning." />
+  <meta name="keywords" content="Nandini Kesarwani, CS Engineer, AI, Machine Learning, NLP, Python, Java, portfolio" />
+  <meta property="og:title" content="Nandini Kesarwani — CS Engineer & AI Enthusiast" />
+  <meta property="og:description" content="Premium portfolio — ML projects, certifications, and more." />
+  <meta property="og:type" content="website" />
+  <title>Nandini Kesarwani — CS Engineer</title>
+
+
+
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+
+  <!-- Custom Gold Champagne Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='gold' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23F3E5AB'/%3E%3Cstop offset='50%25' stop-color='%23D4AF37'/%3E%3Cstop offset='100%25' stop-color='%23AA7C11'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpolygon points='50,8 92,50 50,92 8,50' fill='none' stroke='url(%23gold)' stroke-width='4' stroke-linejoin='round'/%3E%3Cpolygon points='50,15 85,50 50,85 15,50' fill='none' stroke='url(%23gold)' stroke-width='1.5' stroke-dasharray='4,2' opacity='0.7'/%3E%3Ctext x='50%25' y='58%25' font-family='Syne, Inter, sans-serif' font-size='32' font-weight='800' fill='url(%23gold)' text-anchor='middle' letter-spacing='-1'%3ENK%3C/text%3E%3C/svg%3E" />
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body class="has-sidebar">
+
+  <!-- ══════════ LEFT SIDEBAR ══════════ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-inner">
+
+      <!-- Profile Photo -->
+      <div class="sb-photo-wrap">
+        <div class="sb-photo-ring">
+          <img src="photo.jpeg" alt="Nandini Kesarwani" class="sb-photo" />
+        </div>
+      </div>
+
+      <!-- Name & Title -->
+      <h2 class="sb-name">Nandini Kesarwani</h2>
+      <span class="sb-title">Computer Science Engineer</span>
+
+      <!-- Divider -->
+      <div class="sb-divider"></div>
+
+      <!-- Contact Info -->
+      <div class="sb-contacts" id="sb-contacts">
+        <div class="sb-contact-row">
+          <div class="sb-contact-ico"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <div class="sb-contact-label">Email</div>
+            <div class="sb-contact-val">nandinikesarwani0221@gmail.com</div>
+          </div>
+        </div>
+        <div class="sb-contact-row">
+          <div class="sb-contact-ico"><i class="fa-solid fa-calendar"></i></div>
+          <div>
+            <div class="sb-contact-label">Birthday</div>
+            <div class="sb-contact-val">February 21, 2004</div>
+          </div>
+        </div>
+        <div class="sb-contact-row">
+          <div class="sb-contact-ico"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <div class="sb-contact-label">Location</div>
+            <div class="sb-contact-val">Prayagraj, Uttar Pradesh, India</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Show Contacts Toggle Button -->
+      <button class="sb-toggle-btn" onclick="toggleSidebarContacts()" id="sb-toggle">
+        Show Contacts
+      </button>
+
+      <!-- Divider -->
+      <div class="sb-divider"></div>
+
+      <!-- Social Links -->
+      <div class="sb-socials">
+        <a href="https://www.linkedin.com/in/nandini-kesarwani-1b214128b" target="_blank" class="sb-social-link"
+          title="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/nandinikesarwani-tech" target="_blank" class="sb-social-link" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://leetcode.com/u/Nandinikesarwani21/" target="_blank" class="sb-social-link" title="LeetCode">
+          <i class="fas fa-code"></i>
+        </a>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ══════════ MAIN CONTENT WRAPPER ══════════ -->
+  <div class="main-content">
+
+    <!-- ══════════ PAGE LOADER ══════════ -->
+    <div id="page-loader">
+      <div class="loader-logo">NK</div>
+      <div class="loader-bar">
+        <div class="loader-fill"></div>
+      </div>
+    </div>
+
+    <!-- ══════════ FIXED ELEMENTS ══════════ -->
+    <div id="scroll-bar"></div>
+    <canvas id="star-canvas"></canvas>
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+    <div id="cursor-glow-follow"></div>
+    <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ══════════ NAVBAR ══════════ -->
+    <nav>
+      <div class="nav-logo">NK</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <!-- <li><a href="#github">GitHub</a></li> -->
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta magnetic-btn">Hire Me</a>
+    </nav>
+
+    <!-- ══════════ HERO ══════════ -->
+    <section id="hero">
+      <!-- atmospheric nebula glows -->
+      <div class="hero-nebula hn1"></div>
+      <div class="hero-nebula hn2"></div>
+      <div class="hero-nebula hn3"></div>
+
+      <!-- spline model -->
+
+      <div class="hero-3d-container">
+        <spline-viewer url="https://prod.spline.design/Wapm1KHQos7mg4Zb/scene.splinecode"></spline-viewer>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for Opportunities
+        </div>
+
+        <h1 class="hero-name">
+          <span class="name-grad shimmer-text">Nandini</span>
+          <span class="name-grad shimmer-text">Kesarwani</span>
+        </h1>
+
+        <p class="hero-headline">
+          B.Tech CSE student at UCER Prayagraj and former IBM intern engineering responsive, automated data solutions
+          and sophisticated software architectures.
+        </p>
+
+        <div class="hero-tw" id="typewriter"></div>
+
+        <div class="hero-ctas">
+          <span class="magnetic-btn">
+            <a href="mailto:nandinikesarwani0221@gmail.com" class="btn btn-primary">
+              <i class="fa-solid fa-envelope"></i> Email Me
+            </a>
+          </span>
+          <span class="magnetic-btn">
+            <a href="Nandini_Resume_Ucer.pdf" download class="btn btn-outline">
+              <i class="fa-solid fa-download"></i> Resume
+            </a>
+          </span>
+          <span class="magnetic-btn">
+            <a href="#projects" class="btn btn-ghost">
+              <i class="fa-solid fa-rocket"></i> View Projects
+            </a>
+          </span>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/nandini-kesarwani-1b214128b" target="_blank" rel="noopener"
+            class="social-pill">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://github.com/nandinikesarwani-tech" target="_blank" rel="noopener" class="social-pill">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ══════════ STATS BAR ══════════ -->
+    <div id="stats">
+      <div class="stat-item reveal">
+        <span class="stat-num" data-target="3">0</span>
+        <span class="stat-lbl">Projects Built</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num" data-target="5">0</span>
+        <span class="stat-lbl">Certifications</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num" data-target="3">0</span>
+        <span class="stat-lbl">Years Coding</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num" data-target="74">0</span>
+        <span class="stat-lbl">CGPA × 10</span>
+      </div>
+    </div>
+
+    <!-- ══════════ ABOUT ══════════ -->
+
+    <section id="about">
+      <p class="sec-label reveal">Who I Am</p>
+      <h2 class="sec-title reveal">About Me</h2>
+
+      <div class="about-grid">
+        <div class="reveal slide-in-left">
+          <div class="about-photo-wrap">
+            <div class="about-photo-frame">
+              <span class="initials">
+                <div class="about-image">
+                  <img src="nandini.jpeg" alt="Anushka Kesarwani">
+                </div>
+              </span>
+            </div>
+            <div class="about-corner" style="bottom:-16px;right:-16px">
+              <span class="corner-icon">🤖</span>
+            </div>
+            <div class="about-corner" style="top:-16px;left:-16px">
+              <span class="corner-icon">✨</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text reveal">
+          <p>
+            I'm a third-year B.Tech Computer Science student at United College of Engineering & Research,
+            Prayagraj, with a deep passion for Artificial Intelligence and Machine Learning.
+          </p>
+          <p>
+            From building salary prediction models using ensemble methods to developing NLP-based fake news
+            detection systems, I'm driven by the challenge of making machines smarter. I completed an
+            internship at IBM where I gained hands-on exposure to enterprise-scale AI/ML workflows.
+          </p>
+          <p>
+            Outside of code, I'm continuously learning — earning certifications in Python, Java, and
+            Generative AI, and recently received a Letter of Appreciation from UCER for outstanding
+            academic performance.
+          </p>
+          <div class="about-chips">
+            <span class="about-chip">Machine Learning</span>
+            <!-- <span class="about-chip">NLP</span> -->
+            <span class="about-chip">Python</span>
+            <span class="about-chip">Java</span>
+            <span class="about-chip">Ensemble Methods</span>
+            <span class="about-chip">AI Enthusiast</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ══════════ EXPERIENCE ══════════ -->
+    <section id="experience">
+      <p class="sec-label reveal">Work History</p>
+      <h2 class="sec-title reveal">Experience</h2>
+      <p class="sec-sub reveal">Hands-on exposure to enterprise AI and real-world application pipelines.</p>
+
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-top">
+            <div>
+              <div class="tl-role">AI / ML Intern</div>
+              <div class="tl-company">
+                <i class="fa-solid fa-building-columns"></i> IBM
+              </div>
+            </div>
+            <span class="tl-badge">Aug 2025</span>
+          </div>
+          <ul class="tl-bullets">
+            <li>Explored fundamental concepts of Artificial Intelligence including supervised and unsupervised learning
+              paradigms used in production systems.</li>
+            <li>Gained hands-on exposure to AI/ML workflows and real-world application pipelines deployed at enterprise
+              scale within IBM's infrastructure.</li>
+            <li>Received Virtual Internship Certificate upon successful completion of the programe.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ══════════ PROJECTS ══════════ -->
+    <section id="projects">
+      <p class="sec-label reveal">What I've Built</p>
+      <h2 class="sec-title reveal">Featured Projects</h2>
+      <p class="sec-sub reveal">End-to-end machine learning and web applications built to solve real-world problems.</p>
+
+      <div class="proj-grid">
+
+        <div class="proj-card reveal" style="transition-delay:.06s">
+          <div class="proj-header">
+            <div class="proj-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="proj-links">
+              <a href="https://github.com/nandinikesarwani-tech" target="_blank" rel="noopener" class="proj-link"
+                title="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="proj-title">Salary Prediction — Ensemble Learning</div>
+          <div class="proj-date">Aug 2025</div>
+          <p class="proj-desc">
+            Built a salary prediction model using ensemble methods (Random Forest & Gradient Boosting)
+            to improve accuracy over individual models. Performed rigorous data preprocessing, feature
+            selection, and model evaluation — outperforming single-model baselines by a significant margin.
+          </p>
+          <div class="proj-tags">
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">Scikit-learn</span>
+            <span class="proj-tag">Random Forest</span>
+            <span class="proj-tag">Gradient Boosting</span>
+            <span class="proj-tag">Pandas</span>
+          </div>
+        </div>
+
+        <div class="proj-card reveal" style="transition-delay:.14s">
+          <div class="proj-header">
+            <div class="proj-icon"><i class="fa-solid fa-newspaper"></i></div>
+            <div class="proj-links">
+              <a href="https://github.com/nandinikesarwani-tech" target="_blank" rel="noopener" class="proj-link"
+                title="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="proj-title">Fake News Generator & Detector</div>
+          <div class="proj-date">Aug 2025</div>
+          <p class="proj-desc">
+            Developed an NLP-based system capable of both generating and detecting fake news using
+            machine learning classification techniques. Implemented text analysis and classification
+            pipelines to identify misleading content with improved accuracy over baselines.
+          </p>
+          <div class="proj-tags">
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">NLP</span>
+            <span class="proj-tag">ML Classification</span>
+            <span class="proj-tag">Text Analysis</span>
+            <span class="proj-tag">NLTK</span>
+          </div>
+        </div>
+
+        <div class="proj-card reveal" style="transition-delay:.22s">
+          <div class="proj-header">
+            <div class="proj-icon"><i class="fa-solid fa-coins"></i></div>
+            <div class="proj-links">
+              <a href="https://github.com/nandinikesarwani-tech" target="_blank" rel="noopener" class="proj-link"
+                title="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="proj-title">Currency Converter</div>
+          <div class="proj-date">2023</div>
+          <p class="proj-desc">
+            Developed a real-time currency converter application powered by live exchange rate APIs.
+            Designed a clean, responsive user interface with efficient conversion logic for a seamless
+            experience across 150+ currency pairs.
+          </p>
+          <div class="proj-tags">
+            <span class="proj-tag">HTML</span>
+            <span class="proj-tag">CSS</span>
+            <span class="proj-tag">JavaScript</span>
+            <span class="proj-tag">REST API</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ══════════ SKILLS ══════════ -->
+    <section id="skills">
+      <p class="sec-label reveal">What I Know</p>
+      <h2 class="sec-title reveal">Technical Skills</h2>
+      <p class="sec-sub reveal">Languages, tools, and frameworks that power my work.</p>
+
+      <div class="skills-layout">
+        <div class="skills-left reveal">
+          <p class="sg-label">Languages</p>
+          <div class="chip-row">
+            <span class="chip hi">Python</span>
+            <span class="chip hi">Java</span>
+            <span class="chip hi">SQL</span>
+            <span class="chip hi">HTML</span>
+            <span class="chip hi">CSS</span>
+          </div>
+
+          <p class="sg-label">Developer Tools</p>
+          <div class="chip-row">
+            <span class="chip">VS Code</span>
+            <span class="chip">Git</span>
+            <span class="chip">GitHub</span>
+          </div>
+
+          <p class="sg-label">AI / ML Stack</p>
+          <div class="chip-row">
+            <span class="chip hi">Scikit-learn</span>
+            <span class="chip hi">Pandas</span>
+            <span class="chip hi">NumPy</span>
+            <span class="chip">NLTK</span>
+            <span class="chip">Matplotlib</span>
+          </div>
+
+          <p class="sg-label">Coursework</p>
+          <div class="chip-row">
+            <span class="chip">DBMS</span>
+            <span class="chip">Operating Systems</span>
+            <span class="chip">Networking</span>
+            <span class="chip">Web Technology</span>
+          </div>
+        </div>
+
+        <div class="skill-bars reveal">
+          <p class="sg-label">Proficiency</p>
+
+          <div class="sb-item">
+            <div class="sb-row"><span class="sb-name">Python</span><span class="sb-pct">82%</span></div>
+            <div class="sb-track">
+              <div class="sb-fill" data-width="82"></div>
+            </div>
+          </div>
+          <div class="sb-item">
+            <div class="sb-row"><span class="sb-name">Machine Learning</span><span class="sb-pct">72%</span></div>
+            <div class="sb-track">
+              <div class="sb-fill" data-width="72"></div>
+            </div>
+          </div>
+          <div class="sb-item">
+            <div class="sb-row"><span class="sb-name">Java</span><span class="sb-pct">75%</span></div>
+            <div class="sb-track">
+              <div class="sb-fill" data-width="75"></div>
+            </div>
+          </div>
+          <div class="sb-item">
+            <div class="sb-row"><span class="sb-name">HTML / CSS</span><span class="sb-pct">80%</span></div>
+            <div class="sb-track">
+              <div class="sb-fill" data-width="80"></div>
+            </div>
+          </div>
+          <div class="sb-item">
+            <div class="sb-row"><span class="sb-name">SQL</span><span class="sb-pct">68%</span></div>
+            <div class="sb-track">
+              <div class="sb-fill" data-width="68"></div>
+            </div>
+          </div>
+          <div class="sb-item">
+            <div class="sb-row"><span class="sb-name">NLP</span><span class="sb-pct">65%</span></div>
+            <div class="sb-track">
+              <div class="sb-fill" data-width="65"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ══════════ GITHUB ══════════ -->
+    <!-- <section id="github">
+  <p class="sec-label reveal">Open Source</p>
+  <h2 class="sec-title reveal">GitHub Insights</h2>
+  <p class="sec-sub reveal">Public contributions, repositories, and coding activity.</p>
+
+  <div class="gh-grid stagger-fade reveal" id="gh-stats">
+    <div class="gh-stat-card">
+      <span class="gh-stat-num" data-target="8" data-gh="repos">0</span>
+      <span class="gh-stat-lbl">Repositories</span>
+    </div>
+    <div class="gh-stat-card">
+      <span class="gh-stat-num" data-target="12" data-gh="followers">0</span>
+      <span class="gh-stat-lbl">Followers</span>
+    </div>
+    <div class="gh-stat-card">
+      <span class="gh-stat-num" data-target="24">0</span>
+      <span class="gh-stat-lbl">Stars Earned</span>
+    </div>
+    <div class="gh-stat-card">
+      <span class="gh-stat-num" data-target="60">0</span>
+      <span class="gh-stat-lbl">Contributions</span>
+    </div>
+  </div> -->
+
+    <!-- Contribution heatmap -->
+    <!-- <div class="reveal" style="margin-bottom:2rem">
+    <p class="sg-label" style="margin-bottom:1rem">Contribution Activity (Last 6 months)</p>
+    <div id="gh-heatmap" style="overflow-x:auto;padding:0.5rem 0"></div>
+  </div> -->
+
+    <!-- Repo cards injected by github.js -->
+    <!-- <div class="gh-repos" id="gh-repos"></div> -->
+    <!-- 
+  <div class="gh-link-wrap reveal">
+    <a href="https://github.com/nandinikesarwani-tech" target="_blank" rel="noopener" class="btn btn-outline magnetic-btn">
+      <i class="fa-brands fa-github"></i> View GitHub Profile
+    </a>
+  </div>
+</section>
+
+<div class="section-divider"></div> -->
+
+    <!-- ══════════ EDUCATION ══════════ -->
+    <section id="education">
+      <p class="sec-label reveal">Academic Journey</p>
+      <h2 class="sec-title reveal">Education</h2>
+      <p class="sec-sub reveal">Strong academic foundation in computer science and engineering.</p>
+
+      <div class="edu-list">
+
+        <div class="edu-card reveal">
+          <div class="edu-ico"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div>
+            <div class="edu-deg">B.Tech — Computer Science Engineering</div>
+            <div class="edu-school">United College of Engineering & Research, Prayagraj</div>
+            <div class="edu-meta">
+              <span class="edu-pill hi">CGPA: 7.4</span>
+              <span class="edu-pill">2023 – 2027</span>
+              <span class="edu-pill">Ongoing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-card reveal">
+          <div class="edu-ico"><i class="fa-solid fa-school"></i></div>
+          <div>
+            <div class="edu-deg">ISC — Class XII</div>
+            <div class="edu-school">Girls' High School, Prayagraj</div>
+            <div class="edu-meta">
+              <span class="edu-pill hi">72.0%</span>
+              <span class="edu-pill">2023</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-card reveal">
+          <div class="edu-ico"><i class="fa-solid fa-book-open"></i></div>
+          <div>
+            <div class="edu-deg">ICSE — Class X</div>
+            <div class="edu-school">Girls' High School, Prayagraj</div>
+            <div class="edu-meta">
+              <span class="edu-pill hi">80.0%</span>
+              <span class="edu-pill">2021</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ══════════ CERTIFICATIONS ══════════ -->
+    <section id="certifications">
+      <p class="sec-label reveal">Recognition</p>
+      <h2 class="sec-title reveal">Certifications & Achievements</h2>
+      <p class="sec-sub reveal">Credentials earned through relentless learning and outstanding performance.</p>
+
+      <div class="cert-grid">
+
+        <div class="cert-card reveal" style="transition-delay:.05s">
+          <div class="cert-ico"><i class="fa-brands fa-java"></i></div>
+          <div>
+            <div class="cert-name">Java Programming Certification</div>
+            <div class="cert-issuer">Core Java & OOP Concepts · 2023</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal" style="transition-delay:.10s">
+          <div class="cert-ico"><i class="fa-solid fa-robot"></i></div>
+          <div>
+            <div class="cert-name">Virtual Internship Certificate</div>
+            <div class="cert-issuer">IBM · 2025</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal" style="transition-delay:.15s">
+          <div class="cert-ico"><i class="fa-brands fa-python"></i></div>
+          <div>
+            <div class="cert-name">Python Programming Certification</div>
+            <div class="cert-issuer">GUVI (HCL) · 2025</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal" style="transition-delay:.20s">
+          <div class="cert-ico"><i class="fa-solid fa-brain"></i></div>
+          <div>
+            <div class="cert-name">Generative AI with Databricks</div>
+            <div class="cert-issuer">Databricks · Simplilearn SkillUp · 2025</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal" style="transition-delay:.25s">
+          <div class="cert-ico"><i class="fa-solid fa-award"></i></div>
+          <div>
+            <div class="cert-name">Letter of Appreciation</div>
+            <div class="cert-issuer">UCER · Outstanding Performance · 2026</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ══════════ RESUME CENTER ══════════ -->
+    <section id="resume">
+      <p class="sec-label reveal">Download</p>
+      <h2 class="sec-title reveal">Resume Center</h2>
+      <p class="sec-sub reveal">Download my latest resume or view it directly in your browser.</p>
+
+      <div class="resume-card reveal">
+        <div class="resume-icon float">
+          <i class="fa-solid fa-file-lines"></i>
+        </div>
+        <div class="resume-body">
+          <h3>Nandini Kesarwani — Resume 2026</h3>
+          <p>
+            CS Engineering student specialising in AI/ML · IBM Intern · 5 Certifications ·
+            Available for internships and full-time opportunities from 2027.
+          </p>
+          <div class="resume-btns">
+            <a href="Nandini_Resume_Ucer.pdf" download class="btn btn-primary magnetic-btn">
+              <i class="fa-solid fa-download"></i> Download PDF
+            </a>
+            <a href="Nandini_Resume_Ucer.pdf" target="_blank" rel="noopener" class="btn btn-outline magnetic-btn">
+              <i class="fa-solid fa-eye"></i> View Online
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ══════════ CONTACT ══════════ -->
+    <section id="contact">
+      <p class="sec-label reveal">Get In Touch</p>
+      <h2 class="sec-title reveal">Let's Connect</h2>
+
+      <div class="contact-wrap">
+
+        <!-- Left: Info + Map -->
+        <div class="contact-left reveal">
+
+          <!-- Google Map embed (Prayagraj) -->
+          <div class="contact-map-wrap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57741.93988503!2d81.8103!3d25.4358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399acb3e7dac3e87%3A0x3df12f5d16d2d0!2sPrayagraj%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000"
+              width="100%" height="200"
+              style="border:0; border-radius: 12px; filter: invert(85%) hue-rotate(180deg) brightness(0.85) contrast(1.1);"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <div class="c-row">
+            <div class="c-ico"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <div class="c-label">Email</div>
+              <div class="c-val"><a href="mailto:nandinikesarwani0221@gmail.com">nandinikesarwani0221@gmail.com</a>
+              </div>
+            </div>
+            <button class="c-copy" onclick="copyEmail(this)">Copy</button>
+          </div>
+
+
+          <div class="c-row">
+            <div class="c-ico"><i class="fa-brands fa-linkedin"></i></div>
+            <div>
+              <div class="c-label">LinkedIn</div>
+              <div class="c-val"><a href="https://www.linkedin.com/in/nandini-kesarwani-1b214128b" target="_blank"
+                  rel="noopener">linkedin.com/in/nandini-kesarwani</a></div>
+            </div>
+          </div>
+
+          <div class="c-row">
+            <div class="c-ico"><i class="fa-solid fa-code"></i></div>
+            <div>
+              <div class="c-label">LeetCode</div>
+              <div class="c-val"><a href="https://leetcode.com/u/Nandinikesarwani21/" target="_blank"
+                  rel="noopener">leetcode.com/u/Nandinikesarwani21</a></div>
+            </div>
+          </div>
+
+          <!-- <div class="c-row">
+        <div class="c-ico"><i class="fa-brands fa-github"></i></div>
+        <div>
+          <div class="c-label">GitHub</div>
+          <div class="c-val"><a href="https://github.com/nandinikesarwani-tech" target="_blank" rel="noopener">github.com/nandinikesarwani-tech</a></div>
+        </div>
+      </div> -->
+
+          <div class="c-row">
+            <div class="c-ico"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <div class="c-label">Location</div>
+              <div class="c-val">Prayagraj, Uttar Pradesh, India</div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="contact-form-wrap reveal" style="transition-delay:.12s">
+          <h3 class="contact-form-title">Send a Message</h3>
+          <p class="contact-form-sub">Fill the form below and I'll get back to you as soon as possible.</p>
+
+          <div class="contact-form" id="contactForm">
+            <div class="cf-group">
+              <input type="text" id="cf-name" class="cf-input" placeholder="Your Name" autocomplete="name" />
+            </div>
+            <div class="cf-group">
+              <input type="email" id="cf-email" class="cf-input" placeholder="Your Email" autocomplete="email" />
+            </div>
+            <div class="cf-group">
+              <input type="text" id="cf-subject" class="cf-input" placeholder="Subject" />
+            </div>
+            <div class="cf-group">
+              <textarea id="cf-message" class="cf-input cf-textarea" placeholder="Your Message" rows="5"></textarea>
+            </div>
+            <button class="cf-submit btn btn-primary" onclick="submitContactForm()">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+            <p class="cf-note" id="cf-note"></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════ FOOTER ══════════ -->
+    <footer>
+      <div class="footer-left">
+        Crafted with curiosity by <span>Nandini Kesarwani</span> · 2026 ·
+        Built among the stars ✦
+      </div>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/nandinikesarwani-tech" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/nandini-kesarwani-1b214128b" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </footer>
+
+    <!-- ══════════ SCRIPTS ══════════ -->
+    <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="js/github.js"></script>
+    <script src="js/stats.js"></script>
+    <script src="js/main.js"></script>
+
+
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.28/build/spline-viewer.js"></script>
+
+
+
+    <script>
+      function submitContactForm() {
+        const name = document.getElementById('cf-name').value.trim();
+        const email = document.getElementById('cf-email').value.trim();
+        const subject = document.getElementById('cf-subject').value.trim();
+        const message = document.getElementById('cf-message').value.trim();
+        const note = document.getElementById('cf-note');
+
+        if (!name || !email || !message) {
+          note.style.color = '#e74c3c';
+          note.textContent = 'Please fill in Name, Email, and Message.';
+          return;
+        }
+
+        const mailtoLink = `mailto:nandinikesarwani0221@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Contact')}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+        window.location.href = mailtoLink;
+
+        note.style.color = '#D4AF37';
+        note.textContent = '✓ Opening your mail client...';
+      }
+    </script>
+
+
+
+  </div><!-- end .main-content -->
+
+  <script>
+    function toggleSidebarContacts() {
+      const contacts = document.getElementById('sb-contacts');
+      const btn = document.getElementById('sb-toggle');
+      const isVisible = contacts.classList.toggle('visible');
+      btn.textContent = isVisible ? 'Hide Contacts' : 'Show Contacts';
+    }
+  </script>
+
+</body>
+
+</html>
+

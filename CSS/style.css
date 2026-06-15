@@ -801,11 +801,31 @@ body.has-sidebar { display: flex; min-height: 100vh; }
 }
 
 /* ── Spline 3D Scene Adjustments ── */
+/* ── Updated 3D Hero Container to Crop Logo ── */
 .hero-3d-container {
-  position: absolute; top: 0; left: 0;
-  width: 106%; height: 100%; z-index: 1; overflow: hidden;
-  transform: translateX(20%); 
+  position: absolute; 
+  top: 0; 
+  left: 0;
+  width: 112%;          /* Stretches the container slightly wider than the screen */
+  height: 106%;         /* Stretches the container slightly taller than the screen */
+  z-index: 1; 
+  overflow: hidden;     /* Acts as a mask, cutting off anything outside the screen bounds */
+  transform: translateX(12%); /* Shifts the frame so the extra space (and logo) is pushed off the right/bottom edge */
+  pointer-events: none;
 }
-.hero-3d-container spline-viewer { width: 105%; height: 100%; }
+
+.hero-3d-container spline-viewer { 
+  width: 100%; 
+  height: 100%; 
+  pointer-events: auto; 
+}
 .hero-content { position: relative; z-index: 2; pointer-events: none; }
 .hero-badge, .hero-name, .hero-headline, #typewriter, .hero-ctas, .hero-socials { pointer-events: auto; }
+
+/* ── Hide Spline Watermark Logo Safely ── */
+spline-viewer::part(logo) {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}

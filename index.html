@@ -836,46 +836,7 @@
   </script>
 
 
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const splineViewer = document.querySelector('spline-viewer');
-    
-    if (splineViewer) {
-      // If the shadow root is already open/attached
-      if (splineViewer.shadowRoot) {
-        injectCustomStyle(splineViewer.shadowRoot);
-      } else {
-        // Fallback for slower loading components: watch for the shadow root to attach
-        const observer = new MutationObserver(() => {
-          if (splineViewer.shadowRoot) {
-            injectCustomStyle(splineViewer.shadowRoot);
-            observer.disconnect();
-          }
-        });
-        observer.observe(splineViewer, { attributes: true, childList: true });
-      }
-    }
-  });
 
-  function injectCustomStyle(shadowRoot) {
-    if (shadowRoot.querySelector('#shadow-spline-fix')) return; // Avoid duplicate injections
-    
-    const style = document.createElement('style');
-    style.id = 'shadow-spline-fix';
-    style.textContent = `
-      #logo, 
-      .spline-watermark, 
-      a[href*="spline.design"],
-      [id*="logo"] { 
-        display: none !important; 
-        opacity: 0 !important; 
-        visibility: hidden !important; 
-        pointer-events: none !important;
-      }
-    `;
-    shadowRoot.appendChild(style);
-  }
-</script>
 
 
 

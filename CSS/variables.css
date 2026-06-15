@@ -59,9 +59,15 @@
   --grad-hero:   radial-gradient(ellipse 80% 60% at 70% 50%, rgba(158,128,40,0.03) 0%, transparent 70%);
 
   /* ── Typography & Layout Structure (Left exactly as they were) ── */
-  --ff-display: 'Cormorant Garamond', serif;
+  /* --ff-display: 'Cormorant Garamond', serif;
+  --ff-body:    'Manrope', sans-serif;
+  --ff-mono:    'JetBrains Mono', monospace; */
+
+  /* ── Typography (Updated to a clean, modern Sans-Serif) ── */
+  --ff-display: 'Manrope', sans-serif; /* Changed from Cormorant Garamond to match Nitin's style */
   --ff-body:    'Manrope', sans-serif;
   --ff-mono:    'JetBrains Mono', monospace;
+
   --pad:   max(1.5rem, calc(50vw - 500px));
   --max-w: 1000px;
   --r:     12px;

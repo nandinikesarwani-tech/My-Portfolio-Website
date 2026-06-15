@@ -48,3 +48,104 @@
   resize();
   draw();
 })();
+
+
+
+
+// ----------------------------------------------------------------------------
+
+const canvas = document.getElementById('interactive-particle-canvas');
+const ctx = canvas.getContext('2d');
+
+let mouse = { x: null, y: null, radius: 120 };
+let particlesArray = [];
+
+// Handle resizing safely
+function resizeCanvas() {
+    canvas.width = canvas.parentElement.clientWidth;
+    canvas.height = canvas.parentElement.clientHeight;
+    initParticles();
+}
+
+class Particle {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.baseX = x;
+        this.baseY = y;
+        this.size = 2;
+        this.density = (Math.random() * 30) + 10;
+    }
+    
+    draw() {
+        ctx.fillStyle = '#9e8028'; // Matches your beautiful muted gold champagne theme perfectly!
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    update() {
+        // Calculate distance between mouse pointer and particles
+        let dx = mouse.x - this.x;
+        let dy = mouse.y - this.y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < mouse.radius) {
+            let forceDirectionX = dx / distance;
+            let forceDirectionY = dy / distance;
+            let maxDistance = mouse.radius;
+            let force = (maxDistance - distance) / maxDistance;
+            let directionX = forceDirectionX * force * this.density;
+            let directionY = forceDirectionY * force * this.density;
+            
+            this.x -= directionX;
+            this.y -= directionY;
+        } else {
+            if (this.x !== this.baseX) {
+                let dx = this.x - this.baseX;
+                this.x -= dx / 10;
+            }
+            if (this.y !== this.baseY) {
+                let dy = this.y - this.baseY;
+                this.y -= dy / 10;
+            }
+        }
+    }
+}
+
+function initParticles() {
+    particlesArray = [];
+    // Creates a neat grid of interactive nodes
+    const numberOfParticles = 80; 
+    for (let i = 0; i < numberOfParticles; i++) {
+        let x = Math.random() * canvas.width;
+        let y = Math.random() * canvas.height;
+        particlesArray.push(new Particle(x, y));
+    }
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].draw();
+        particlesArray[i].update();
+    }
+    requestAnimationFrame(animate);
+}
+
+// Track cursor interactions cleanly without memory leaks
+window.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+});
+
+window.addEventListener('mouseout', () => {
+    mouse.x = null;
+    mouse.y = null;
+});
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+animate();

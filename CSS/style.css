@@ -829,3 +829,12 @@ spline-viewer::part(logo) {
     visibility: hidden !important;
     pointer-events: none !important;
 }
+
+
+
+#interactive-particle-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: auto; /* Ensures mouse tracks perfectly */
+}

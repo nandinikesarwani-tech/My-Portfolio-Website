@@ -802,24 +802,59 @@ body.has-sidebar { display: flex; min-height: 100vh; }
 
 /* ── Spline 3D Scene Adjustments ── */
 /* ── Updated 3D Hero Container to Crop Logo ── */
-.hero-3d-container {
+/* .hero-3d-container {
   position: absolute; 
   top: 0; 
   left: 0;
-  width: 112%;          /* Stretches the container slightly wider than the screen */
-  height: 106%;         /* Stretches the container slightly taller than the screen */
+  width: 112%;          Stretches the container slightly wider than the screen */
+  /* height: 106%;         Stretches the container slightly taller than the screen */
+  /* z-index: 1;  */
+  /* overflow: hidden;     Acts as a mask, cutting off anything outside the screen bounds */
+  /* transform: translateX(12%); Shifts the frame so the extra space (and logo) is pushed off the right/bottom edge */
+  /* pointer-events: none; */
+/* } */
+
+
+
+
+
+
+
+/* ── Perfect Right Side 3D Placement Fix ── */
+.hero-3d-container {
+  position: absolute; 
+  top: 50%;
+  right: 5%;            /* Rigidly sticks it to the right sidebar edge */
+  transform: translateY(-50%);
+  width: 400px;         /* Elegant structural box size */
+  height: 400px;
   z-index: 1; 
-  overflow: hidden;     /* Acts as a mask, cutting off anything outside the screen bounds */
-  transform: translateX(12%); /* Shifts the frame so the extra space (and logo) is pushed off the right/bottom edge */
-  pointer-events: none;
+  overflow: hidden;
+  pointer-events: none; /* Text or buttons behind it remain clickable */
 }
+
+#premium-geometry-mesh {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  pointer-events: auto; /* Activates cursor tracking correctly */
+}
+
+/* Forces your main profile content to stay crisp on the left layer */
+.hero-content { 
+  position: relative; 
+  z-index: 2; 
+  max-width: 55%;       /* Prevents your text from ever touching the 3D grid */
+}
+
+
 
 .hero-3d-container spline-viewer { 
   width: 100%; 
   height: 100%; 
   pointer-events: auto; 
 }
-.hero-content { position: relative; z-index: 2; pointer-events: none; }
+/* .hero-content { position: relative; z-index: 2; pointer-events: none; } */
 .hero-badge, .hero-name, .hero-headline, #typewriter, .hero-ctas, .hero-socials { pointer-events: auto; }
 
 /* ── Hide Spline Watermark Logo Safely ── */

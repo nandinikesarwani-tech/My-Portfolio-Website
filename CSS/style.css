@@ -814,11 +814,6 @@ body.has-sidebar { display: flex; min-height: 100vh; }
   pointer-events: none;
 }
 
-/* ── Spline Logo Ke Upar Black Box Mask Lagane Ke Liye ── */
-.hero-3d-container {
-  position: relative; /* Yeh zaroori hai taaki mask iske andar hi rahe */
-}
-
 .hero-3d-container spline-viewer { 
   width: 100%; 
   height: 100%; 

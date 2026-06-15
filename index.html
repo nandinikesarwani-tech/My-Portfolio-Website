@@ -151,121 +151,121 @@
       <!-- <div class="hero-3d-container">
         <spline-viewer url="https://prod.spline.design/Wapm1KHQos7mg4Zb/scene.splinecode"></spline-viewer>
       </div> -->
-    
 
 
-<!-- ----------Three.js model---------- -->
+
+      <!-- ----------Three.js model---------- -->
       <div class="hero-3d-container">
-       <canvas id="premium-geometry-mesh"></canvas>
-     </div>
+        <canvas id="premium-geometry-mesh"></canvas>
+      </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-<script>
-  (function() {
-    const canvas = document.querySelector('#premium-geometry-mesh');
-    if (!canvas) return;
-    const container = canvas.parentElement;
+      <script>
+        (function () {
+          const canvas = document.querySelector('#premium-geometry-mesh');
+          if (!canvas) return;
+          const container = canvas.parentElement;
 
-    // 1. Scene setup
-    const scene = new THREE.Scene();
-    const group = new THREE.Group();
+          // 1. Scene setup
+          const scene = new THREE.Scene();
+          const group = new THREE.Group();
 
-    // 2. High-Tech Premium Materials (Champagne Gold Theme)
-    const wireframeMaterial = new THREE.MeshStandardMaterial({
-        color: 0x9e8028,      // Perfectly matches your premium gold accents
-        wireframe: true,      // Matrix network structure
-        transparent: true,
-        opacity: 0.5
-    });
+          // 2. High-Tech Premium Materials (Champagne Gold Theme)
+          const wireframeMaterial = new THREE.MeshStandardMaterial({
+            color: 0x9e8028,      // Perfectly matches your premium gold accents
+            wireframe: true,      // Matrix network structure
+            transparent: true,
+            opacity: 0.5
+          });
 
-    const solidCoreMaterial = new THREE.MeshStandardMaterial({
-        color: 0x161204,      // Very deep obsidian gold core
-        roughness: 0.1,
-        metalness: 0.95
-    });
+          const solidCoreMaterial = new THREE.MeshStandardMaterial({
+            color: 0x161204,      // Very deep obsidian gold core
+            roughness: 0.1,
+            metalness: 0.95
+          });
 
-    // Outer complex crystal cage
-    const outerGeo = new THREE.IcosahedronGeometry(4.2, 1); 
-    const outerMesh = new THREE.Mesh(outerGeo, wireframeMaterial);
-    group.add(outerMesh);
+          // Outer complex crystal cage
+          const outerGeo = new THREE.IcosahedronGeometry(4.2, 1);
+          const outerMesh = new THREE.Mesh(outerGeo, wireframeMaterial);
+          group.add(outerMesh);
 
-    // Inner glowing solid core
-    const innerGeo = new THREE.IcosahedronGeometry(2.0, 0);
-    const innerMesh = new THREE.Mesh(innerGeo, solidCoreMaterial);
-    group.add(innerMesh);
+          // Inner glowing solid core
+          const innerGeo = new THREE.IcosahedronGeometry(2.0, 0);
+          const innerMesh = new THREE.Mesh(innerGeo, solidCoreMaterial);
+          group.add(innerMesh);
 
-    // Dynamic clean orbit ring intersecting through the element
-    const ringGeo = new THREE.TorusGeometry(5.8, 0.04, 8, 64);
-    const ringMaterial = new THREE.MeshBasicMaterial({ color: 0x9e8028, transparent: true, opacity: 0.25 });
-    const orbitRing = new THREE.Mesh(ringGeo, ringMaterial);
-    orbitRing.rotation.x = Math.PI / 2.5;
-    group.add(orbitRing);
+          // Dynamic clean orbit ring intersecting through the element
+          const ringGeo = new THREE.TorusGeometry(5.8, 0.04, 8, 64);
+          const ringMaterial = new THREE.MeshBasicMaterial({ color: 0x9e8028, transparent: true, opacity: 0.25 });
+          const orbitRing = new THREE.Mesh(ringGeo, ringMaterial);
+          orbitRing.rotation.x = Math.PI / 2.5;
+          group.add(orbitRing);
 
-    scene.add(group);
+          scene.add(group);
 
-    // 3. Crisp Lights Setup
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-    scene.add(ambientLight);
+          // 3. Crisp Lights Setup
+          const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+          scene.add(ambientLight);
 
-    const pointLight1 = new THREE.PointLight(0xffffff, 1.5, 30);
-    pointLight1.position.set(5, 8, 5);
-    scene.add(pointLight1);
+          const pointLight1 = new THREE.PointLight(0xffffff, 1.5, 30);
+          pointLight1.position.set(5, 8, 5);
+          scene.add(pointLight1);
 
-    const pointLight2 = new THREE.PointLight(0x9e8028, 1.2, 20);
-    pointLight2.position.set(-5, -5, 4);
-    scene.add(pointLight2);
+          const pointLight2 = new THREE.PointLight(0x9e8028, 1.2, 20);
+          pointLight2.position.set(-5, -5, 4);
+          scene.add(pointLight2);
 
-    // Camera perspective adjustment
-    const camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 100);
-    camera.position.z = 14; 
-    scene.add(camera);
+          // Camera perspective adjustment
+          const camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 100);
+          camera.position.z = 14;
+          scene.add(camera);
 
-    // WebGL Engine Renderer
-    const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+          // WebGL Engine Renderer
+          const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+          renderer.setSize(container.clientWidth, container.clientHeight);
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    // 4. Cursor Interactivity Vectors
-    let targetX = 0; let targetY = 0;
-    window.addEventListener('mousemove', (event) => {
-        // Normalizes screen layout coordinates cleanly
-        targetX = (event.clientX / window.innerWidth - 0.5) * 0.8;
-        targetY = (event.clientY / window.innerHeight - 0.5) * 0.6;
-    });
+          // 4. Cursor Interactivity Vectors
+          let targetX = 0; let targetY = 0;
+          window.addEventListener('mousemove', (event) => {
+            // Normalizes screen layout coordinates cleanly
+            targetX = (event.clientX / window.innerWidth - 0.5) * 0.8;
+            targetY = (event.clientY / window.innerHeight - 0.5) * 0.6;
+          });
 
-    const clock = new THREE.Clock();
+          const clock = new THREE.Clock();
 
-    // Continuous smooth cinematic render pipeline
-    const tick = () => {
-        const elapsedTime = clock.getElapsedTime();
+          // Continuous smooth cinematic render pipeline
+          const tick = () => {
+            const elapsedTime = clock.getElapsedTime();
 
-        // Elegant automatic system spin
-        outerMesh.rotation.y = elapsedTime * 0.12;
-        outerMesh.rotation.x = elapsedTime * 0.04;
-        innerMesh.rotation.y = -elapsedTime * 0.18;
-        orbitRing.rotation.z = -elapsedTime * 0.08;
+            // Elegant automatic system spin
+            outerMesh.rotation.y = elapsedTime * 0.12;
+            outerMesh.rotation.x = elapsedTime * 0.04;
+            innerMesh.rotation.y = -elapsedTime * 0.18;
+            orbitRing.rotation.z = -elapsedTime * 0.08;
 
-        // Premium float animation
-        group.position.y = Math.sin(elapsedTime * 1.2) * 0.15;
+            // Premium float animation
+            group.position.y = Math.sin(elapsedTime * 1.2) * 0.15;
 
-        // Interactive spring lerp response to mouse cursor
-        group.rotation.y += (targetX - group.rotation.y) * 0.08;
-        group.rotation.x += (targetY - group.rotation.x) * 0.08;
+            // Interactive spring lerp response to mouse cursor
+            group.rotation.y += (targetX - group.rotation.y) * 0.08;
+            group.rotation.x += (targetY - group.rotation.x) * 0.08;
 
-        renderer.render(scene, camera);
-        window.requestAnimationFrame(tick);
-    };
+            renderer.render(scene, camera);
+            window.requestAnimationFrame(tick);
+          };
 
-    window.addEventListener('resize', () => {
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
-    });
+          window.addEventListener('resize', () => {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+          });
 
-    tick();
-  })();
-</script>
+          tick();
+        })();
+      </script>
 
       <div class="hero-content">
         <div class="hero-badge">
@@ -283,7 +283,7 @@
           and sophisticated software architectures.
         </p>
 
-        <div class="hero-tw" id="typewriter"></div>
+        <div class="hero-tw" id="typewriter"></div>        
 
         <div class="hero-ctas">
           <span class="magnetic-btn">
@@ -937,4 +937,5 @@
     }
   </script>
 </body>
+
 </html>

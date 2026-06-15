@@ -829,32 +829,3 @@ spline-viewer::part(logo) {
     visibility: hidden !important;
     pointer-events: none !important;
 }
-
-
-
-/* #interactive-particle-canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-  pointer-events: auto; /* Ensures mouse tracks perfectly */
-} */
-
-
-
-/* ── Fullscreen Interactive Particle Canvas Background ── */
-#interactive-particle-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;            /* Puts it cleanly behind your text cards */
-  pointer-events: none;  /* Lets users click on links and buttons normally */
-  display: block;
-}
-
-/* Ensure your text sections have relative positioning to sit above the background */
-#about, #projects, #certs, #contact {
-  position: relative;
-  z-index: 1;            /* Lifts your profile cards over the background dots */
-}

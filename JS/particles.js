@@ -54,95 +54,95 @@
 
 // ----------------------------------------------------------------------------
 
-const canvas = document.getElementById('interactive-particle-canvas');
-const ctx = canvas.getContext('2d');
+// const canvas = document.getElementById('interactive-particle-canvas');
+// const ctx = canvas.getContext('2d');
 
-let mouse = { x: null, y: null, radius: 150 }; // Slightly larger radius for beautiful scroll tracking
-let particlesArray = [];
+// let mouse = { x: null, y: null, radius: 150 }; // Slightly larger radius for beautiful scroll tracking
+// let particlesArray = [];
 
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    initParticles();
-}
+// function resizeCanvas() {
+//     canvas.width = window.innerWidth;
+//     canvas.height = window.innerHeight;
+//     initParticles();
+// }
 
-class Particle {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.baseX = x;
-        this.baseY = y;
-        this.size = 2;
-        this.density = (Math.random() * 40) + 10;
-    }
+// class Particle {
+//     constructor(x, y) {
+//         this.x = x;
+//         this.y = y;
+//         this.baseX = x;
+//         this.baseY = y;
+//         this.size = 2;
+//         this.density = (Math.random() * 40) + 10;
+//     }
     
-    draw() {
-        ctx.fillStyle = '#9e8028'; // Perfect muted gold champagne matching your variables.css
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.closePath();
-        ctx.fill();
-    }
+//     draw() {
+//         ctx.fillStyle = '#9e8028'; // Perfect muted gold champagne matching your variables.css
+//         ctx.beginPath();
+//         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+//         ctx.closePath();
+//         ctx.fill();
+//     }
 
-    update() {
-        let dx = mouse.x - this.x;
-        let dy = mouse.y - this.y;
-        let distance = Math.sqrt(dx * dx + dy * dy);
+//     update() {
+//         let dx = mouse.x - this.x;
+//         let dy = mouse.y - this.y;
+//         let distance = Math.sqrt(dx * dx + dy * dy);
         
-        if (distance < mouse.radius) {
-            let forceDirectionX = dx / distance;
-            let forceDirectionY = dy / distance;
-            let maxDistance = mouse.radius;
-            let force = (maxDistance - distance) / maxDistance;
-            let directionX = forceDirectionX * force * this.density;
-            let directionY = forceDirectionY * force * this.density;
+//         if (distance < mouse.radius) {
+//             let forceDirectionX = dx / distance;
+//             let forceDirectionY = dy / distance;
+//             let maxDistance = mouse.radius;
+//             let force = (maxDistance - distance) / maxDistance;
+//             let directionX = forceDirectionX * force * this.density;
+//             let directionY = forceDirectionY * force * this.density;
             
-            this.x -= directionX;
-            this.y -= directionY;
-        } else {
-            if (this.x !== this.baseX) {
-                let dx = this.x - this.baseX;
-                this.x -= dx / 15; // Muted elastic snap back
-            }
-            if (this.y !== this.baseY) {
-                let dy = this.y - this.baseY;
-                this.y -= dy / 15;
-            }
-        }
-    }
-}
+//             this.x -= directionX;
+//             this.y -= directionY;
+//         } else {
+//             if (this.x !== this.baseX) {
+//                 let dx = this.x - this.baseX;
+//                 this.x -= dx / 15; // Muted elastic snap back
+//             }
+//             if (this.y !== this.baseY) {
+//                 let dy = this.y - this.baseY;
+//                 this.y -= dy / 15;
+//             }
+//         }
+//     }
+// }
 
-function initParticles() {
-    particlesArray = [];
-    // Spreads 120 particles smoothly across the browser viewport coordinates
-    const numberOfParticles = 120; 
-    for (let i = 0; i < numberOfParticles; i++) {
-        let x = Math.random() * canvas.width;
-        let y = Math.random() * canvas.height;
-        particlesArray.push(new Particle(x, y));
-    }
-}
+// function initParticles() {
+//     particlesArray = [];
+//     // Spreads 120 particles smoothly across the browser viewport coordinates
+//     const numberOfParticles = 120; 
+//     for (let i = 0; i < numberOfParticles; i++) {
+//         let x = Math.random() * canvas.width;
+//         let y = Math.random() * canvas.height;
+//         particlesArray.push(new Particle(x, y));
+//     }
+// }
 
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].draw();
-        particlesArray[i].update();
-    }
-    requestAnimationFrame(animate);
-}
+// function animate() {
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//     for (let i = 0; i < particlesArray.length; i++) {
+//         particlesArray[i].draw();
+//         particlesArray[i].update();
+//     }
+//     requestAnimationFrame(animate);
+// }
 
-// Global mouse tracker that accounts for viewport absolute offsets
-window.addEventListener('mousemove', (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-});
+// // Global mouse tracker that accounts for viewport absolute offsets
+// window.addEventListener('mousemove', (e) => {
+//     mouse.x = e.clientX;
+//     mouse.y = e.clientY;
+// });
 
-window.addEventListener('mouseleave', () => {
-    mouse.x = null;
-    mouse.y = null;
-});
+// window.addEventListener('mouseleave', () => {
+//     mouse.x = null;
+//     mouse.y = null;
+// });
 
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-animate();
+// window.addEventListener('resize', resizeCanvas);
+// resizeCanvas();
+// animate();

@@ -57,13 +57,12 @@
 const canvas = document.getElementById('interactive-particle-canvas');
 const ctx = canvas.getContext('2d');
 
-let mouse = { x: null, y: null, radius: 120 };
+let mouse = { x: null, y: null, radius: 150 }; // Slightly larger radius for beautiful scroll tracking
 let particlesArray = [];
 
-// Handle resizing safely
 function resizeCanvas() {
-    canvas.width = canvas.parentElement.clientWidth;
-    canvas.height = canvas.parentElement.clientHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     initParticles();
 }
 
@@ -74,11 +73,11 @@ class Particle {
         this.baseX = x;
         this.baseY = y;
         this.size = 2;
-        this.density = (Math.random() * 30) + 10;
+        this.density = (Math.random() * 40) + 10;
     }
     
     draw() {
-        ctx.fillStyle = '#9e8028'; // Matches your beautiful muted gold champagne theme perfectly!
+        ctx.fillStyle = '#9e8028'; // Perfect muted gold champagne matching your variables.css
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.closePath();
@@ -86,7 +85,6 @@ class Particle {
     }
 
     update() {
-        // Calculate distance between mouse pointer and particles
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
@@ -104,11 +102,11 @@ class Particle {
         } else {
             if (this.x !== this.baseX) {
                 let dx = this.x - this.baseX;
-                this.x -= dx / 10;
+                this.x -= dx / 15; // Muted elastic snap back
             }
             if (this.y !== this.baseY) {
                 let dy = this.y - this.baseY;
-                this.y -= dy / 10;
+                this.y -= dy / 15;
             }
         }
     }
@@ -116,8 +114,8 @@ class Particle {
 
 function initParticles() {
     particlesArray = [];
-    // Creates a neat grid of interactive nodes
-    const numberOfParticles = 80; 
+    // Spreads 120 particles smoothly across the browser viewport coordinates
+    const numberOfParticles = 120; 
     for (let i = 0; i < numberOfParticles; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
@@ -134,14 +132,13 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-// Track cursor interactions cleanly without memory leaks
+// Global mouse tracker that accounts for viewport absolute offsets
 window.addEventListener('mousemove', (e) => {
-    const rect = canvas.getBoundingClientRect();
-    mouse.x = e.clientX - rect.left;
-    mouse.y = e.clientY - rect.top;
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
 });
 
-window.addEventListener('mouseout', () => {
+window.addEventListener('mouseleave', () => {
     mouse.x = null;
     mouse.y = null;
 });

@@ -13,63 +13,59 @@
    DESIGN TOKENS — Premium Black & Gold Champagne Portfolio
 ═══════════════════════════════════════════════════════ */
 :root {
-  /* ── Backgrounds ── */
-  --bg-base:    #0a0800;
-  --bg-surface: #0e0b00;
-  --bg-raised:  #110e02;
-  --bg-card:    #161100;
-  --bg-card-2:  #1a1403;
-  --bg-overlay: rgba(10, 8, 0, 0.88);
+  /* ── Backgrounds (Deepened to a pure, low-brightness dark slate) ── */
+  --bg-base:    #030302;  /* Lowered from #0a0800 for a darker base */
+  --bg-surface: #060503;  /* Lowered from #0e0b00 */
+  --bg-raised:  #0a0805;  /* Lowered from #110e02 */
+  --bg-card:    #0d0b07;  /* Lowered from #161100 */
+  --bg-card-2:  #110e09;  /* Lowered from #1a1403 */
+  --bg-overlay: rgba(3, 3, 2, 0.92);
 
-  /* ── Accent: Golden Champagne ── */
-  --gold-deep:   #8B6914;
-  --gold-mid:    #C49A2A;
-  --gold-bright: #D4AF37;
-  --gold-light:  #E8C95D;
-  --gold-soft:   #F5E19A;
+  /* ── Accent: Muted Golden Champagne (Reduced brightness/saturation) ── */
+  --gold-deep:   #5c450d;  /* Toned down from #8B6914 */
+  --gold-mid:    #8a6c1e;  /* Toned down from #C49A2A */
+  --gold-bright: #9e8028;  /* Toned down from #D4AF37 */
+  --gold-light:  #bda44a;  /* Toned down from #E8C95D */
+  --gold-soft:   #d1be7d;  /* Toned down from #F5E19A */
 
-  /* ── Secondary: Warm Champagne ── */
-  --champagne:      #C8A951;
-  --champagne-soft: #DEC278;
+  /* ── Secondary: Muted Warm Champagne ── */
+  --champagne:      #8f7839;  /* Toned down from #C8A951 */
+  --champagne-soft: #b09a58;  /* Toned down from #DEC278 */
 
-  /* ── Text ── */
-  --text-primary:   #F5EDD5;
-  --text-secondary: #9A8A60;
-  --text-muted:     #4A3E1A;
+  /* ── Text Tones (Nandini converted to grey, secondary softened) ── */
+  --text-primary:   #989898;  /* Changed your main name/header text to a clean, subtle grey */
+  --text-secondary: #7a7056;  /* Softened from #9A8A60 to look less bright */
+  --text-muted:     #3d3419;  /* Lowered from #4A3E1A */
   --text-accent:    var(--gold-bright);
 
-  /* ── Borders ── */
-  --border:       rgba(212, 175, 55, 0.1);
-  --border-hover: rgba(212, 175, 55, 0.45);
-  --border-card:  rgba(212, 175, 55, 0.08);
-  --border-glow:  rgba(212, 175, 55, 0.25);
+  /* ── Borders (Dimmed down) ── */
+  --border:       rgba(158, 128, 40, 0.06);
+  --border-hover: rgba(158, 128, 40, 0.25);
+  --border-card:  rgba(158, 128, 40, 0.04);
+  --border-glow:  rgba(158, 128, 40, 0.12);
 
-  /* ── Glows / Shadows ── */
-  --glow-gold:   rgba(212, 175, 55, 0.35);
-  --glow-light:  rgba(232, 201, 93, 0.2);
-  --glow-warm:   rgba(196, 154, 42, 0.25);
-  --shadow-card: 0 4px 30px rgba(0, 0, 0, 0.7);
-  --shadow-lift: 0 12px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.12);
+  /* ── Glows / Shadows (Drastically reduced intensity) ── */
+  --glow-gold:   rgba(158, 128, 40, 0.15);
+  --glow-light:  rgba(189, 164, 74, 0.08);
+  --glow-warm:   rgba(138, 108, 30, 0.1);
+  --shadow-card: 0 4px 30px rgba(0, 0, 0, 0.9);
+  --shadow-lift: 0 12px 50px rgba(0, 0, 0, 0.8);
 
-  /* ── Gradients ── */
-  --grad-text:   linear-gradient(135deg, #F5E19A, #D4AF37, #8B6914);
-  --grad-btn:    linear-gradient(135deg, #8B6914, #C49A2A, #D4AF37);
-  --grad-bar:    linear-gradient(90deg, #8B6914, #F5E19A);
-  --grad-card:   linear-gradient(145deg, rgba(139,105,20,0.07), rgba(245,225,154,0.03));
-  --grad-hero:   radial-gradient(ellipse 80% 60% at 70% 50%, rgba(212,175,55,0.07) 0%, transparent 70%);
+  /* ── Gradients (Darkened for smooth transitions) ── */
+  --grad-text:   linear-gradient(135deg, #bda44a, #9e8028, #5c450d);
+  --grad-btn:    linear-gradient(135deg, #5c450d, #8a6c1e, #9e8028);
+  --grad-bar:    linear-gradient(90deg, #5c450d, #bda44a);
+  --grad-card:   linear-gradient(145deg, rgba(92,69,13,0.04), rgba(209,190,125,0.01));
+  --grad-hero:   radial-gradient(ellipse 80% 60% at 70% 50%, rgba(158,128,40,0.03) 0%, transparent 70%);
 
-  /* ── Typography ── */
+  /* ── Typography & Layout Structure (Left exactly as they were) ── */
   --ff-display: 'Cormorant Garamond', serif;
   --ff-body:    'Manrope', sans-serif;
   --ff-mono:    'JetBrains Mono', monospace;
-
-  /* ── Layout ── */
   --pad:   max(1.5rem, calc(50vw - 500px));
   --max-w: 1000px;
   --r:     12px;
   --r-lg:  20px;
-
-  /* ── Transitions ── */
   --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --dur-fast: 0.18s;
